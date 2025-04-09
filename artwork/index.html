@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+        }
+        table {
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        img {
+            height: 400px;
+        }
+        .card-title {
+            background-image: linear-gradient(90deg, #5f8aff, #7b81fe);
+            border-radius: 5px;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .badge {
+            animation: badge 1.5s infinite;
+        }
+        @keyframes badge {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand fw-bold" href="../artwork/index.html">Art Gallery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navid">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navid">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../artwork/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">View Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../artwork/about.html">About Artist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../artwork/contact.html">Contact</a>
+                    </li>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                                required>
+                        </div>
+                        <div >
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>Don't have an account? <a href="#signInModal" data-bs-toggle="modal"
+                                    data-bs-target="#signInModal" data-bs-dismiss="modal">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="signUpName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signUpName" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signUpEmail" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUpPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signUpPassword"
+                                placeholder="Create a password">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../artwork/images/abstract2.jpg" alt="" class="d-block w-100 " style="height: 600px;">
+                <div class="carousel-caption">
+                    <h2 class="fw-bold">The Flow of Serenity</h2>
+                    <p class="text-light bg-dark bg-opacity-50 p-2 rounded">A soothing blend of soft blues and pastels,
+                        capturing the essence of calmness and mindfulness through abstract strokes.</p>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <img src="../artwork/images/geometric.jpg" alt="" class="d-block w-100" style="height: 600px; ">
+                <div class="carousel-caption">
+                    <h2 class="fw-bold">Symmetry in Motion</h2>
+                    <p class="text-light bg-dark bg-opacity-50 p-2 rounded">A modern take on geometric patterns,
+                        featuring bold colors and sharp edges that create a perfect balance between art and precision.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <img src="../artwork/images/natural.jpg" alt="" class="d-block w-100" style="height: 600px; ">
+                <div class="carousel-caption">
+                    <h3 class="fw-bold">Whispers of the Forest</h2>
+                        <p class="text-light bg-dark bg-opacity-50 p-2 rounded">A digital watercolor piece inspired by
+                            the peaceful harmony of nature, blending deep greens and earthy tones to create a
+                            mesmerizing effect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" data-bs-target="#demo" data-bs-slide="prev" class="carousel-control-prev"><span
+            class="carousel-control-prev-icon"></span></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide="next" class="carousel-control-next"><span
+            class="carousel-control-next-icon"></span></button>
+            <div class="container mt-4">
+                
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="filterOffcanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Filter & Sort Options</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form>
+                 
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select">
+                                <option selected>All</option>
+                                <option>Digital Art</option>
+                                <option>Painting</option>
+                                <option>Sketch</option>
+                            </select>
+                        </div>
+            
+                  
+                        <div class="mb-3">
+                            <label class="form-label">Price Range</label>
+                            <input type="range" class="form-range" min="100" max="10000" step="100">
+                        </div>
+            
+                        <div class="mb-3">
+                            <label class="form-label">Sort by</label>
+                            <select class="form-select">
+                                <option selected>Default</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                            </select>
+                        </div>
+            
+                       
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+    <div class="container-fluid mt-5" style="width: 60%;">
+        <div class="table-responsive">
+        <table class="table table-bordered table-hover border-dark text-center table-warning rounded">
+            <thead class="table-dark ">
+                <tr>
+                    <th class="p-4">Category</th>
+                    <th class="p-4">Definition</th>
+                    <th class="p-4">Medium</th>
+                    <th class="p-4">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-4">Fantasy</td>
+                    <td class="py-4">Magical and otherworldly, featuring mythical creatures and dreamlike landscapes.
+                    </td>
+                    <td class="py-4">Digital Art, Oil Painting</td>
+                    <td class="py-4">₹5,000 - ₹12,000</td>
+                </tr>
+                <tr>
+                    <td class="py-4">Abstract</td>
+                    <td class="py-4">Expressive and thought-provoking, using shapes, colors, and textures for deep
+                        interpretation.</td>
+                    <td class="py-4">Acrylic, Watercolor, Mixed Media</td>
+                    <td class="py-4">₹4,500 - ₹10,000</td>
+                </tr>
+                <tr>
+                    <td class="py-4">Landscape</td>
+                    <td class="py-4">Captures the beauty of nature, from serene mountains to vibrant sunsets.</td>
+                    <td class="py-4">Oil Painting, Watercolor, Acrylic</td>
+                    <td class="py-4">₹6,000 - ₹15,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    
+    <section class="container" id="gallery" style="margin-top: 50px;">
+        
+        <ol class="breadcrumb mt-5 " >
+            <li class="breadcrumb-item"><a href="../artwork/index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Art Collection</li>
+        </ol>
+        <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas">
+            Filter & Sort
+        </button>
+        <h2 class="text-center mb-4">Art Collection</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg ">
+                    <img src="../artwork/images/pic1 (2).jpg" class="card-img-top" alt="pic1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ethereal Kingdom</h5>
+                        <p class="card-text"><strong>Category:</strong> Fantasy</p>
+                        <p class="card-text"><strong>Medium:</strong> Digital Art</p>
+                        <p class="card-text"><strong>Price:</strong> ₹6,500</p>
+                        <p class="card-text">A glowing castle floating above a mystical land, surrounded by enchanted
+                            clouds.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic2.jpg" class="card-img-top" alt="pic2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">The Enchanted Forest
+                             <span
+                                class="badge bg-warning text-dark">Best Seller</span
+                                ></h5>
+                        <p class="card-text"><strong>Category:</strong> Fantasy</p>
+                        <p class="card-text"><strong>Medium:</strong> Oil Painting</p>
+                        <p class="card-text"><strong>Price:</strong> ₹8,200</p>
+                        <p class="card-text">A magical forest bathed in moonlight, where trees whisper secrets and
+                            fairies dance.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic3.jpg" class="card-img-top" alt="pic3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Celestial Dreams</h5>
+                        <p class="card-text"><strong>Category:</strong> Fantasy</p>
+                        <p class="card-text"><strong>Medium:</strong> Acrylic</p>
+                        <p class="card-text"><strong>Price:</strong> ₹7,000</p>
+                        <p class="card-text">A mesmerizing galaxy blending deep blues and purples, featuring shooting
+                            stars and nebulae.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic4.jpg" class="card-img-top" alt="pic4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Echoes of Emotion <span class="badge bg-warning text-dark">Best
+                                Seller</span></h5>
+                        <p class="card-text"><strong>Category:</strong> Abstract</p>
+                        <p class="card-text"><strong>Medium:</strong> Acrylic</p>
+                        <p class="card-text"><strong>Price:</strong> ₹5,500</p>
+                        <p class="card-text">A vibrant mix of bold colors and fluid patterns, symbolizing the chaos of
+                            human emotions.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic5.jpg" class="card-img-top" alt="pic5">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Rhythm of Chaos</h5>
+                        <p class="card-text"><strong>Category:</strong> Abstract</p>
+                        <p class="card-text"><strong>Medium:</strong> Watercolor</p>
+                        <p class="card-text"><strong>Price:</strong> ₹6,000</p>
+                        <p class="card-text">A striking balance between structured geometry and free-flowing brush
+                            strokes, representing energy and movement.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic6.jpg" class="card-img-top" alt="pic6">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Whispers of the Soul</h5>
+                        <p class="card-text"><strong>Category:</strong> Abstract</p>
+                        <p class="card-text"><strong>Medium:</strong> Mixed Media</p>
+                        <p class="card-text"><strong>Price:</strong> ₹6,800</p>
+                        <p class="card-text">A fusion of textures and metallic accents, capturing the hidden depths of
+                            the mind.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic7.jpg" class="card-img-top" alt="pic7">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Golden Horizon</h5>
+                        <p class="card-text"><strong>Category:</strong> Landscape</p>
+                        <p class="card-text"><strong>Medium:</strong> Oil Painting</p>
+                        <p class="card-text"><strong>Price:</strong> ₹9,500</p>
+                        <p class="card-text">A breathtaking sunset over rolling hills, where golden hues blend into the
+                            sky.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic8.jpg" class="card-img-top" alt="pic8">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Serene Waters</h5>
+                        <p class="card-text"><strong>Category:</strong> Landscape</p>
+                        <p class="card-text"><strong>Medium:</strong> Watercolor</p>
+                        <p class="card-text"><strong>Price:</strong> ₹7,200</p>
+                        <p class="card-text">A peaceful lake reflecting the soft morning light, surrounded by lush
+                            greenery.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg">
+                    <img src="../artwork/images/pic9.jpg" class="card-img-top" alt="pic9">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mystic Mountains <span class="badge bg-warning text-dark">Best
+                                Seller</span></h5>
+                        <p class="card-text"><strong>Category:</strong> Landscape</p>
+                        <p class="card-text"><strong>Medium:</strong> Acrylic</p>
+                        <p class="card-text"><strong>Price:</strong> ₹10,000</p>
+                        <p class="card-text">Majestic peaks covered in mist, capturing the mystery and beauty of
+                            untouched nature.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Queries</h5>
+                    <textarea class="form-control" placeholder="comment here"></textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../artwork/index.html" class=" text-light bg-dark text-decoration-none ">Home</a></li>
+                        <li><a href="../artwork/about.html" class=" text-light bg-dark text-decoration-none">About</a></li>
+                        <li><a href="../artwork/contact.html" class=" text-light bg-dark text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Follow Me</h5>
+                    <a href="#" class="text-light me-3">Facebook</a>
+                    <a href="#" class="text-light me-3">Instagram</a>
+                    <a href="#" class="text-light">Whatsapp</a>
+                </div>
+            </div>
+            <div class="mt-3">
+                <p>&copy; 2025 My Art Gallery. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
